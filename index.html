@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0F0D0B" />
+
+    <!-- ============ PRIMARY META ============ -->
+    <title>Tanour · Multi-Cuisine Restaurant in JP Nagar, Bengaluru</title>
+    <meta
+      name="description"
+      content="Halal-certified multi-cuisine restaurant in JP Nagar, Bengaluru. Charcoal grills, Hyderabadi biryani, Indo-Chinese classics, and Arabian shawarma. Free home delivery."
+    />
+    <meta
+      name="keywords"
+      content="Tanour, Indian restaurant JP Nagar, Halal restaurant Bangalore, biryani JP Nagar, Arabian grill Bangalore, shawarma JP Nagar"
+    />
+    <meta name="author" content="Tanour Multi Cuisine Restaurant" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- ============ CANONICAL ============ -->
+    <!-- Update the domain when you deploy -->
+    <link rel="canonical" href="https://tanour.in/" />
+
+    <!-- ============ OPEN GRAPH (WhatsApp / Facebook / Instagram) ============ -->
+    <meta property="og:type" content="restaurant" />
+    <meta property="og:site_name" content="Tanour Multi Cuisine Restaurant" />
+    <meta property="og:title" content="Tanour · Multi-Cuisine Restaurant in JP Nagar" />
+    <meta
+      property="og:description"
+      content="Charcoal grills, Hyderabadi biryani, and Indo-Chinese classics. Halal-certified. Free delivery in JP Nagar."
+    />
+    <meta property="og:url" content="https://tanour.in/" />
+    <meta property="og:image" content="https://tanour.in/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Tanour — charcoal-grilled meats and biryani" />
+    <meta property="og:locale" content="en_IN" />
+
+    <!-- ============ TWITTER CARD ============ -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tanour · Multi-Cuisine Restaurant in JP Nagar" />
+    <meta
+      name="twitter:description"
+      content="Halal-certified multi-cuisine kitchen in JP Nagar, Bengaluru. Grills, biryani, Chinese, shawarma."
+    />
+    <meta name="twitter:image" content="https://tanour.in/og-image.jpg" />
+
+    <!-- ============ MOBILE / PWA HINTS ============ -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Tanour" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- ============ FAVICON (add file at /public/favicon.svg) ============ -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- ============ FONT PRECONNECT (perf) ============ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- ============ RESTAURANT STRUCTURED DATA (JSON-LD) ============ -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Tanour Multi Cuisine Restaurant",
+        "image": "https://tanour.in/og-image.jpg",
+        "url": "https://tanour.in/",
+        "telephone": "+91-7019001733",
+        "servesCuisine": [
+          "Indian",
+          "Arabian",
+          "Hyderabadi",
+          "Indo-Chinese",
+          "Mughlai",
+          "Shawarma"
+        ],
+        "priceRange": "₹₹",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "11/1, 24th Main Rd, 5th Phase, Annaiah Reddy Layout",
+          "addressLocality": "JP Nagar, Bengaluru",
+          "addressRegion": "Karnataka",
+          "postalCode": "560078",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 12.9063,
+          "longitude": 77.5857
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "11:00",
+            "closes": "23:00"
+          }
+        ],
+        "servesFood": {
+          "@type": "ServeAction",
+          "serviceType": "Delivery, Takeaway, Dine-in"
+        },
+        "hasMenu": "https://tanour.in/#menu",
+        "acceptsReservations": "False",
+        "suitableForDiet": "https://schema.org/HalalDiet"
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

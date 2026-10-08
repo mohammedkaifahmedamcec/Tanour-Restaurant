@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   BASE — Tanour Elite
+   ============================================ */
+
+@layer base {
+  :root {
+    --grain-opacity: 0.035;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    @apply bg-ink text-cream font-sans antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+    overflow-x: hidden;
+  }
+
+  /* Selection — brand-tinted */
+  ::selection {
+    background: #E8541E;
+    color: #F5EDE0;
+  }
+
+  /* Headings — editorial display serif */
+  h1, h2, h3, h4 {
+    @apply font-display text-cream;
+    font-variation-settings: 'opsz' 144, 'SOFT' 0, 'WONK' 0;
+  }
+
+  h1 {
+    @apply text-display-sm md:text-display lg:text-display-lg;
+    font-weight: 500;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+  }
+
+  /* Body copy on dark backgrounds */
+  p {
+    @apply text-cream/85;
+  }
+
+  /* Links */
+  a {
+    @apply transition-colors duration-300;
+  }
+
+  /* Focus — accessible, brand-colored */
+  :focus-visible {
+    outline: 2px solid #E8541E;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Images — no accidental drag, block display */
+  img {
+    @apply block max-w-full h-auto select-none;
+  }
+
+  /* Buttons */
+  button {
+    @apply font-sans;
+  }
+}
+
+/* ============================================
+   COMPONENT UTILITIES
+   ============================================ */
+
+@layer components {
+  /* Primary CTA — ember fill */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-ember text-cream
+           px-6 py-3.5 md:px-7 md:py-4
+           rounded-full
+           font-sans font-semibold
+           text-sm md:text-[15px] tracking-wider uppercase
+           transition-all duration-300 ease-out
+           hover:bg-ember-deep hover:-translate-y-0.5
+           active:translate-y-0
+           shadow-[0_8px_32px_-12px_rgba(232,84,30,0.6)];
+  }
+
+  /* Secondary CTA — brass outline */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-transparent text-cream
+           border border-brass/60
+           px-6 py-3.5 md:px-7 md:py-4
+           rounded-full
+           font-sans font-medium
+           text-sm md:text-[15px] tracking-wider uppercase
+           transition-all duration-300 ease-out
+           hover:border-brass hover:bg-brass/10 hover:-translate-y-0.5
+           active:translate-y-0;
+  }
+
+  /* Ghost CTA — text link with underline */
+  .btn-ghost {
+    @apply inline-flex items-center gap-1.5
+           text-brass font-medium text-sm tracking-wide
+           border-b border-brass/40 pb-0.5
+           transition-all duration-300
+           hover:text-brass-soft hover:border-brass-soft;
+  }
+
+  /* Section container */
+  .container-tanour {
+    @apply mx-auto w-full max-w-7xl px-5 md:px-8 lg:px-12;
+  }
+
+  /* Editorial eyebrow label */
+  .eyebrow {
+    @apply inline-flex items-center gap-3
+           text-brass text-[11px] md:text-xs font-medium
+           uppercase tracking-ultra;
+  }
+
+  .eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.6;
+  }
+
+  /* Thin brass divider */
+  .divider-brass {
+    @apply h-px w-full bg-brass/25;
+  }
+
+  /* Card — dark surface with subtle border */
+  .surface-card {
+    @apply bg-ink-soft border border-brass/10 rounded-2xl
+           transition-all duration-500 ease-out
+           hover:border-brass/30;
+  }
+
+  /* Grain overlay — apply to dark hero sections */
+  .grain-overlay {
+    position: relative;
+  }
+
+  .grain-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: var(--tw-grain, none);
+    opacity: var(--grain-opacity);
+    mix-blend-mode: overlay;
+  }
+
+  /* Ember glow under a highlighted element */
+  .ember-glow {
+    box-shadow: 0 0 60px -20px rgba(232, 84, 30, 0.55);
+  }
+
+  /* Veg / Non-veg indicator */
+  .diet-dot {
+    @apply inline-block w-3 h-3 rounded-sm border
+           flex-shrink-0 relative;
+  }
+
+  .diet-dot::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border-radius: 9999px;
+  }
+
+  .diet-dot--veg {
+    @apply border-halal;
+  }
+
+  .diet-dot--veg::after {
+    background: #1F7A3F;
+  }
+
+  .diet-dot--nonveg {
+    @apply border-ember;
+  }
+
+  .diet-dot--nonveg::after {
+    background: #E8541E;
+  }
+
+  /* Reveal animation utility (used by IntersectionObserver) */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+                transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Text clamp helpers */
+  .clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* ============================================
+   SCROLLBAR — subtle, brand-consistent
+   ============================================ */
+
+@layer utilities {
+  .scrollbar-thin-dark {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(201, 146, 46, 0.4) transparent;
+  }
+
+  .scrollbar-thin-dark::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .scrollbar-thin-dark::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin-dark::-webkit-scrollbar-thumb {
+    background: rgba(201, 146, 46, 0.35);
+    border-radius: 9999px;
+  }
+
+  .scrollbar-thin-dark::-webkit-scrollbar-thumb:hover {
+    background: rgba(201, 146, 46, 0.6);
+  }
+
+  /* Hide scrollbar but keep scrolling (mobile category strips) */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
